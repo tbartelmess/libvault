@@ -7,5 +7,5 @@ install:
   - sudo apt-get install -y -qq curl
 script:
     - cmake .
-    - make all
+    - make
     - make test
