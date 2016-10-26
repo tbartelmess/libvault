@@ -1,5 +1,8 @@
 typedef struct _VaultClient VaultClient;
 
+#define VAULT_OK         0
+#define VAULT_ERR_ALLOC  1
+
 /*!
  Create a new Vault Client with an Address and an optional vault token
 
@@ -18,3 +21,7 @@ vault_client_new(const char* url, const char* token);
 */
 void
 vault_client_free(VaultClient* client);
+
+
+
+
