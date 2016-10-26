@@ -1,7 +1,7 @@
 image: Visual Studio 2015
 
 before_build:
-  - nuget Install-Package curl
+  - nuget install curl
 
 build_script:
   - cmake "-GVisual Studio 14 2015" -H. -B_builds
