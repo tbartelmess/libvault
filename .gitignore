@@ -20,7 +20,11 @@ Makefile
 cmake_install.cmake
 install_manifest.txt
 CTestTestfile.cmake
+Testing
 
 
 ## Build results
 *.so
+*.a
+vault_tests
+
