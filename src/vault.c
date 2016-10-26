@@ -7,8 +7,17 @@
 VaultClient*
 vault_client_new(const char* url, const char* token) {
     VaultClient* client = malloc(sizeof(VaultClient));
-    client->url = strcpy(malloc(strlen(url)+1), url);
-    client->token = strcpy(malloc(strlen(token)+1), token);
+
+    (*client).url = NULL;
+    (*client).token = NULL;
+
+    if (url) {
+        client->url = strcpy(malloc(strlen(url)+1), url);
+    }
+
+    if (token) {
+        client->token = strcpy(malloc(strlen(token)+1), token);
+    }
     return client;
 }
 

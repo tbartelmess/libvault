@@ -19,11 +19,21 @@ START_TEST(test_url_token_set_on_init) {
 }
 END_TEST
 
+START_TEST(test_init_with_null_values) {
+    VaultClient* client = vault_client_new(
+        NULL,
+        NULL
+    );
+    vault_client_free(client);
+}
+END_TEST
+
 Suite*
 client_suite(void) {
     Suite* suite = suite_create("Vault Client");
     TCase* test_case = tcase_create("Constructor");
     tcase_add_test(test_case, test_url_token_set_on_init);
+    tcase_add_test(test_case, test_init_with_null_values);
     suite_add_tcase(suite, test_case);
     return suite;
 }
