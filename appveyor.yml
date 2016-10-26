@@ -4,6 +4,6 @@ before_build:
   - "nuget install curl -o c:/nuget"
 
 build_script:
-  - "dir c:/nuget"
+  - "dir c:\nuget"
   - cmake "-DCMAKE_PREFIX_PATH=c:/nuget" "-GVisual Studio 14 2015" -H. -B_builds
   - cmake --build _builds
