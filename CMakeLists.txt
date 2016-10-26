@@ -11,11 +11,11 @@ find_package(Check REQUIRED)
 file(GLOB SOURCES "src/*.c")
 file(GLOB HEADERS "src/*.h")
 
-IF (CMAKE_C_COMPILER_ID "Clang")
+IF(${CMAKE_C_COMPILER_ID} STREQUAL "Clang")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Weverything")
-else
+ELSE()
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
-endif
+ENDIF()
 
 add_library(vault SHARED ${SOURCES})
 target_include_directories(vault PRIVATE ${CURL_INCLUDE_DIRS})
