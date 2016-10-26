@@ -14,7 +14,7 @@ file(GLOB HEADERS "src/*.h")
 IF(${CMAKE_C_COMPILER_ID} STREQUAL "Clang")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Weverything")
 ELSE()
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wno-unknown-pragmas")
 ENDIF()
 
 add_library(vault SHARED ${SOURCES})
