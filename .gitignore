@@ -28,3 +28,6 @@ Testing
 *.a
 vault_tests
 
+## Generates files
+src/version.h
+test/vault_version.h
