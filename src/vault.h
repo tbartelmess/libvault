@@ -1,3 +1,8 @@
+#pragma once
+#include <stdbool.h>
+#include <time.h>
+#include <stdint.h>
+
 typedef struct _VaultClient VaultClient;
 
 #define VAULT_OK         0
@@ -23,5 +28,33 @@ void
 vault_client_free(VaultClient* client);
 
 
+/** @section Vault Health */
 
+typedef struct {
+    const char* cluster_name;
+    const char* cluster_id;
+    const char* version;
+    const time_t time;
+
+    bool standby;
+    bool sealed;
+    bool initialized;
+    uint8_t padding[5];
+} VaultHealth;
+
+void vault_health_free(VaultHealth* health);
+
+
+/**
+ Query the Vault Server for health
+
+ @param [in] client VaultClient
+
+ @return On success a VaultHealth with the vault health data is retruned.
+         Use use vault_health_free to free VaultHealth when you no longer
+         need it.
+         On failure NULL is returned.
+ */
+const VaultHealth*
+vault_health(VaultClient*client);
 
