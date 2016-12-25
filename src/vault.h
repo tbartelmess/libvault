@@ -39,7 +39,7 @@ typedef struct {
     bool standby;
     bool sealed;
     bool initialized;
-    uint8_t padding[5];
+    uint8_t __padding[5];
 } VaultHealth;
 
 void vault_health_free(VaultHealth* health);
