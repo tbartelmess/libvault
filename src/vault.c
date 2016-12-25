@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <jansson.h>
 
 #include "vault.h"
 #include "vault_internal.h"
