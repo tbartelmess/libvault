@@ -7,7 +7,7 @@ find_package(CURL REQUIRED)
 find_package(Jansson REQUIRED)
 
 find_package(Check REQUIRED)
-find_package(minizip REQUIRED)
+find_package(MiniZip REQUIRED)
 
 
 file(GLOB SOURCES "src/*.c")
