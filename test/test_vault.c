@@ -64,8 +64,8 @@ client_suite(void) {
 int main(void) {
 
     // Global setup
-    unpack_vault();
     download_vault();
+    unpack_vault();
     run_vault();
 
     int number_failed;
