@@ -19,7 +19,7 @@ ELSE()
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wno-unknown-pragmas")
 ENDIF()
 
-set(VAULT_VERSION "0.6.2")
+set(VAULT_VERSION "0.6.4")
 set(VAULT_DOWNLOAD_BASE "https://releases.hashicorp.com/vault")
 string(TOLOWER "${CMAKE_HOST_SYSTEM_NAME}" VAULT_OS)
 
