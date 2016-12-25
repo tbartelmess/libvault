@@ -6,5 +6,5 @@ set -x
 rm -rf /tmp/minizip
 git clone https://github.com/nmoinvaz/minizip.git /tmp/minizip
 cd /tmp/minizip
-cmake .
+/tmp/cmake/bin/cmake .
 sudo make install
