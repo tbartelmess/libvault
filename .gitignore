@@ -11,6 +11,8 @@ Session.vim
 # auto-generated tag files
 tags
 
+## OS Specific
+.DS_Store
 
 ## CMake
 CMakeCache.txt
@@ -25,9 +27,11 @@ Testing
 
 ## Build results
 *.so
+*.dylib
 *.a
 vault_tests
 
 ## Generates files
 src/version.h
 test/vault_version.h
+
