@@ -13,3 +13,17 @@ make
 
 ## Tests
 Tests are written using the [Check library](https://github.com/libcheck/check). To run tests build using cmake and `make test`
+
+# Usage
+
+### Creating a new `VaultClient`
+
+The `VaultClient` encapsulates the information needed to connect to a VaultServer. It is required for all vault operations.
+
+```c
+#include <vault/vault.h>
+
+// Create a new Vault Client.
+VaultClient* client = vault_client_new("https://vault.example.com:8200", "vault_token");
+```
+
