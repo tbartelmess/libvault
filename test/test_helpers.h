@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdint.h>
 #include "run_vault.h"
 extern uint32_t success_count;
 extern uint32_t failed_count;
@@ -20,7 +21,7 @@ int finish_suite();
 #define ANSI_RESET   "\x1b[0m"
 
 #define DELCARE_SUITE(__suitename)\
-void suite_##__suitename ();
+void suite_##__suitename();
 
 #define DEFINE_SUITE(__suitename)\
 void suite_##__suitename() {\
