@@ -6,7 +6,6 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
 find_package(CURL REQUIRED)
 find_package(Jansson REQUIRED)
 
-find_package(Check REQUIRED)
 find_package(MiniZip REQUIRED)
 
 
