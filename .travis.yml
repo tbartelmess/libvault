@@ -4,12 +4,14 @@ compiler:
   - gcc
 install:
   - sudo apt-get update -qq
-  - sudo apt-get install -y -qq curl check libjansson-dev
+  - sudo apt-get install -y -qq curl check
   - curl -o install_cmake.sh https://cmake.org/files/v3.6/cmake-3.6.2-Linux-x86_64.sh
   - chmod +x install_cmake.sh
   - mkdir /tmp/cmake
   - ./install_cmake.sh --skip-license --prefix=/tmp/cmake
   - .travis/build-minizip.sh
+  - .travis/build-jansson.sh
+  
 script:
     - /tmp/cmake/bin/cmake .
     - make
