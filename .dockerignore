@@ -1,0 +1,10 @@
+CMakeFiles/
+CMakeScripts/
+Testing/
+CMakeCache.txt
+CTestTestfile.cmake
+*.so
+*.o
+*.a
+*.dylib
+vault_tests
