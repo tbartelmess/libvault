@@ -2,10 +2,10 @@
 
 [![Build Status](https://travis-ci.org/tbartelmess/libvault.svg?branch=master)](https://travis-ci.org/tbartelmess/libvault)
 
+⚠️ *This is still a work in progress*
 
+Libvault is using [libcurl](https://curl.haxx.se) fo Network requests and [Jansson](https://jansson.readthedocs.io) for JSON parsing.
 
-
-*This is still a work in progress*
 
 ## Building
 
@@ -34,6 +34,28 @@ VaultClient* client = vault_client_new("https://vault.example.com:8200", NULL);
 
 // Cleanup the Vault Client
 vault_client_free(client);
+```
+
+
+### Raw Reading
+
+Using `vault_read` it's easy to read values at a specific vault path. The `VaultValues` struct and get `vault_values_` functions are simple wrappers are around the jansson `json_t` structure.
+
+If only one value is required, the `vault_read_*` function directly return a specific key.
+
+```c
+#include <stdio.h>
+#include <vault/vault.h>
+
+VaultValues* values = vault_read(client, "secret/password");
+const char* value = vault_values_get_string("value");
+free(values);
+printf("Value: %s\n", value);
+free(value)
+
+const char* password = vault_read_string("client", "secret/password", "value");
+printf("Password: %s\n", password);
+
 ```
 
 ### Check Vault Health
