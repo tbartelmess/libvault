@@ -6,3 +6,4 @@
 void download_vault();
 void unpack_vault();
 void run_vault();
+void stop_vault();

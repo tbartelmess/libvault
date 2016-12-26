@@ -44,8 +44,6 @@ void download_vault() {
             fclose(vault_archive);
             curl_easy_cleanup(curl);
         }
-    } else {
-        printf("%s already exists, skipping download.\n", VAULT_DOWNLOAD_ARCHIVE);
     }
 }
 
@@ -98,7 +96,8 @@ static FILE* vault_process;
 static const char server_args[] = "server -dev -dev-root-token-id=\"vault_testing\"";
 
 void run_vault() {
-    printf("Starting vault");
+    download_vault();
+    unpack_vault();
     char* command = malloc(sizeof(VAULT_DOWNLOAD_EXECUTABLE) + sizeof(server_args));
     sprintf(command, "%s %s", VAULT_DOWNLOAD_EXECUTABLE, server_args);
     vault_process = popen(command, "r");
